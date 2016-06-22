@@ -21,8 +21,6 @@ class Pet
   def pet_shop
     sql = "SELECT * FROM pet_shop WHERE id = #{ @pet_shop_id }"
     pets_shop = @runner.run( sql )
-    
-    # pets_shop = pets_shop.map { |pet_shop_data| PetShop.new(pet_shop_data, @runner) }
     return pets_shop[0]['name']
   end
 

@@ -1,6 +1,7 @@
 DROP TABLE pets;
 DROP TABLE pet_shop;
 
+
 CREATE TABLE pet_shop (
   id SERIAL4 primary key,
   name VARCHAR(255),
