@@ -16,10 +16,11 @@ class Pet
   def save()
     sql = "INSERT INTO pets ( name, type, pet_shop_id ) VALUES ('#{ @name }', '#{ @type }', '#{ @pet_shop_id }') RETURNING * "
     @runner.run(sql)
+    @id = pet_data.first['id'].to_i
   end
 
   def pet_shop
-    sql = "SELECT * FROM pet_shop WHERE id = #{ @pet_shop_id }"
+    sql = "SELECT * FROM pet_shop WHERE id = #{ @id }"
     pets_shop = @runner.run( sql )
     return pets_shop[0]['name']
   end

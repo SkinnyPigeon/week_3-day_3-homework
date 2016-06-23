@@ -13,5 +13,5 @@ CREATE TABLE pets (
   id SERIAL4 primary key,
   name VARCHAR(255),
   type VARCHAR(255),
-  pet_shop_id INT4 references pet_shop(id)
+  pet_shop_id INT4 references pet_shop(id) ON DELETE CASCADE
 );
